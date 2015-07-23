@@ -22,13 +22,13 @@ Main Menu
 	- Manage metrics  
 	- Manage alarms  
 	- Dashboard  
-		-- Respond to alerts  
-		-- Instance status
-		-- AWS service status
-		-- Logs
-			--- Analytics
-			--- Review
-			--- Manage
+		- Respond to alerts  
+		- Instance status
+		- AWS service status
+		- Logs
+			- Analytics
+			- Review
+			- Manage
 - S3  
 	- Build Application Buckets (May be encompassed into VPC build outs)
 - RDS  

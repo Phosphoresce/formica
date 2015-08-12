@@ -10,6 +10,8 @@ Main Menu
 	- Manage applications  
 	- Test applications  
 	- Manage High Availability  
+	- Quick Overview of Instances, Security, and Associations  
+	- Service availability for regions  
 - VPC actions  
 	- Manage vpc  
 	- Manage individual vpc parts  

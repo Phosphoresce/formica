@@ -26,11 +26,11 @@ func EntityCount() {
 	regions := []string{"us-east-1", "us-west-1", "us-west-2"}
 	for x := 0; x < len(regions); x++ {
 		// EC2 client
-		client := ec2.New(&aws.Config{Region: regions[x]})
+		client := ec2.New(&aws.Config{Region: &regions[x]})
 		resp, err := client.DescribeInstances(nil)
 		utils.HandleErr(err)
 		// ELB client
-		clientElb := elb.New(&aws.Config{Region: regions[x]})
+		clientElb := elb.New(&aws.Config{Region: &regions[x]})
 		respElb, errElb := clientElb.DescribeLoadBalancers(nil)
 		utils.HandleErr(errElb)
 		fmt.Printf("Region: %v\n-----------------\n", regions[x])
@@ -97,7 +97,7 @@ func ServiceHealth() {
 	// temp array maybe pass this in??
 	regions := []string{"us-east-1", "us-west-1", "us-west-2"}
 	for x := 0; x < len(regions); x++ {
-		client := ec2.New(&aws.Config{Region: regions[x]})
+		client := ec2.New(&aws.Config{Region: &regions[x]})
 		resp, err := client.DescribeAvailabilityZones(nil)
 		utils.HandleErr(err)
 		fmt.Printf("Region: %v\n-----------------\n", regions[x])
@@ -114,7 +114,7 @@ func ScheduledEvents() {
 	regions := []string{"us-east-1", "us-west-1", "us-west-2"}
 	events := 0
 	for x := 0; x < len(regions); x++ {
-		client := ec2.New(&aws.Config{Region: regions[x]})
+		client := ec2.New(&aws.Config{Region: &regions[x]})
 		resp, err := client.DescribeInstanceStatus(nil)
 		utils.HandleErr(err)
 		for y := 0; y < len(resp.InstanceStatuses); y++ {
